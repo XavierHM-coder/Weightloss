@@ -40,10 +40,12 @@ function Navbar() {
         </div>
 
         <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/products">Products</Link>
-          <Link to="/contact">Contact</Link>
-        </div>
+  <Link to="/">Home</Link>
+  <Link to="/benefits">Benefits</Link>  
+  <Link to="/products">Products</Link>
+  <Link to="/sobre">About Us</Link>      
+  <Link to="/contact">Contact</Link>
+</div>
 
       </div>
 
