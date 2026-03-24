@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom"  
 import Navbar from "./Navbar"
-import Home from "./Home"
+import LandingPage from "./LandingPage"
 import Products from "./Products"
 import Benefits from "./Benefits"
 import Sobre from "./Sobre"
@@ -16,7 +16,7 @@ function App() {
        <ScrollToTop />
       <Routes>
        
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/benefits" element={<Benefits />} />  
         <Route path="/products" element={<Products />} />
         <Route path="/sobre" element={<Sobre />} />
