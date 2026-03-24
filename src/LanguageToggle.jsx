@@ -2,19 +2,25 @@ function LanguageToggle() {
 
   const changeLanguage = (lang) => {
 
-    const interval = setInterval(() => {
-
+    const tryChange = () => {
       const select = document.querySelector(".goog-te-combo")
 
       if (select) {
         select.value = lang
         select.dispatchEvent(new Event("change"))
-
-        clearInterval(interval) // 🔥 ya encontró el select
+        return true
       }
+      return false
+    }
 
-    }, 300) // intenta cada 300ms
-
+    // 🔥 intenta varias veces hasta que exista
+    let attempts = 0
+    const interval = setInterval(() => {
+      if (tryChange() || attempts > 10) {
+        clearInterval(interval)
+      }
+      attempts++
+    }, 300)
   }
 
   return (

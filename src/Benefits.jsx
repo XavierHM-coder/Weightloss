@@ -69,20 +69,21 @@ function Benefits() {
 
         <div className="testimonial-grid">
           {benefitss.map((b, i) => (
-            <motion.div
-              key={i}
-              className="testimonial-card"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <p>“{b.text}”</p>
-              <div className="client">
-                <strong>{b.name}</strong>
-                <span>{b.role}</span>
-              </div>
-            </motion.div>
+            <div className="flip-card">
+  <div className="flip-card-inner">
+
+    {/* FRONT */}
+    <div className="flip-card-front">
+      <h3>{b.name}</h3>
+    </div>
+
+    {/* BACK */}
+    <div className="flip-card-back">
+      <p>{b.text}</p>
+    </div>
+
+  </div>
+</div>
           ))}
         </div>
       </section>

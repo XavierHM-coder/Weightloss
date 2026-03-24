@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import logo from "./assets/logo.png"
+import LanguageToggle from "./LanguageToggle"
 
 function Navbar() {
 
@@ -40,12 +41,14 @@ function Navbar() {
         </div>
 
         <div className="nav-links">
-  <Link to="/">Home</Link>
-  <Link to="/benefits">Benefits</Link>  
-  <Link to="/products">Products</Link>
-  <Link to="/sobre">About Us</Link>      
-  <Link to="/contact">Contact</Link>
+  <Link to="/">Inicio</Link>
+  <Link to="/benefits">Beneficios</Link>  
+  <Link to="/products">Productos</Link>
+  <Link to="/sobre">Acerca de</Link>      
+  <Link to="/contact">Contacto</Link>
 </div>
+
+<LanguageToggle />
 
       </div>
 

@@ -1318,3 +1318,74 @@ MOBILE PRO FIX (IMPORTANT)
     font-size: 14px;
   }
 }
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 220px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT Y BACK */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* FRONT */
+.flip-card-front {
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* BACK */
+.flip-card-back {
+  background: #5fa33a;
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-front h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.flip-card-back p {
+  font-size: 14px;
+}
+
+.img-wrap {
+  height: 200px;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 👈 cambia cover por contain */
+  background: #fff;    /* opcional para que no se vea raro */
+}
+
+.lang-toggle {
+  display: flex;
+  gap: 8px;
+}

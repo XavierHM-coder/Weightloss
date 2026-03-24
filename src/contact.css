@@ -58,3 +58,165 @@
 .whatsapp {
   background: #25D366;
 }
+
+/* HERO IMAGE */
+.contact-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+  margin-bottom: 30px;
+}
+
+.contact-hero img {
+  width: 280px;
+  max-width: 90%;
+  border-radius: 20px;
+
+  /* 🔥 efecto premium */
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+
+  transition: 0.4s;
+}
+
+.contact-hero img:hover {
+  transform: scale(1.05);
+}
+
+/* CONTENEDOR */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 20px;
+  gap: 40px;
+  align-items: end; /* 🔥 lo baja */
+}
+
+/* IZQUIERDA */
+.contact-left h1 {
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.contact-sub {
+  margin: 10px 0 30px;
+  color: #666;
+}
+
+/* GRID CARDS */
+.contact-grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* DERECHA */
+.contact-right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  opacity: 0;
+  transform: translateY(80px) scale(0.9);
+  transition: 0.8s ease;
+}
+
+/* 🔥 CUANDO APARECE */
+.contact-right.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* IMAGEN */
+.contact-right img {
+  width: 100%;
+  max-width: 380px;
+
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.25));
+  transition: 0.4s;
+}
+
+/* HOVER PRO */
+.contact-right img:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+/* RESPONSIVE */
+@media (max-width:768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-right {
+    order: -1;
+  }
+
+  .contact-right img {
+    max-width: 250px;
+  }
+}
+
+/* =========================
+MOBILE CONTACT FIX 🔥
+========================= */
+@media (max-width:768px) {
+
+  .contact-container {
+    grid-template-columns: 1fr; /* 🔥 una columna */
+    margin: 100px auto 40px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  /* 🔥 IMAGEN ARRIBA */
+  .contact-right {
+    order: -1; /* sube la imagen */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-right img {
+    max-width: 220px;
+    width: 100%;
+  }
+
+  /* TITULO */
+  .contact-left h1 {
+    font-size: 32px;
+  }
+
+  .contact-sub {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  /* CARDS */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .contact-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .contact-card h3 {
+    font-size: 16px;
+  }
+
+  .contact-card p {
+    font-size: 13px;
+  }
+
+  /* BOTONES */
+  .contact-card button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+}
