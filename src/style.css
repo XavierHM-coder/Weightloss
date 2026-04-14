@@ -1,0 +1,1305 @@
+/* ================================
+   WEIGHTLOSS PROFESSIONAL NUTRITION
+   AESTHETIC: WIX STUDIO / APPLE PREMIUM
+   ================================ */
+
+:root {
+  /* Brand Colors */
+  --brand-green: #4b7e19;
+  --brand-green-light: rgba(75, 126, 25, 0.08);
+  /* Uso sutil */
+  --brand-green-hover: #3a6313;
+  --footer-light-green: #f3f8ee;
+  /* Very light, elegant green for footer */
+
+  /* Neutral Color Palette (Clean & Spacious) */
+  --bg-color: #ffffff;
+  --bg-light: #fbfbfc;
+  /* Almost imperceptible cool off-white */
+  --bg-card: #ffffff;
+
+  /* Text Colors */
+  --text-dark: #121416;
+  /* Not pure black, richer Apple-style dark */
+  --text-muted: #6b7280;
+  /* Elegant slate grey */
+  --text-light: #ffffff;
+
+  /* Borders and Dividers */
+  --border-color: rgba(0, 0, 0, 0.06);
+  --border-green-subtle: rgba(75, 126, 25, 0.3);
+  /* Borde sutil acentuado con la marca */
+
+  /* Typography */
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-slow: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-3d: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* Shadows - Premium and Soft */
+  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.08);
+  --shadow-green: 0 20px 40px rgba(75, 126, 25, 0.15);
+
+  /* Layout Spacing */
+  --section-padding: 140px 0;
+  /* Huge padding for breathability */
+  --container-width: 1300px;
+
+  /* Apple/Wix Studio Radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+}
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-black);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--brand-green);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--brand-green-hover);
+}
+
+/* Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-light {
+  background-color: var(--bg-light);
+}
+
+.border-mid {
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+/* Section Headings - Premium Apple Style */
+section {
+  padding: var(--section-padding);
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  /* Wide tracking for premium feel */
+  text-transform: uppercase;
+  color: var(--brand-green);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  /* Scalable, large typography */
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+
+.section-desc {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  /* Slightly larger, highly readable body */
+  max-width: 700px;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.centered-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--brand-green);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  /* Pill shape for premium feel */
+  border: 1px solid var(--brand-green);
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-green-hover);
+  color: #fff;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-green);
+}
+
+/* ================================
+   HERO BANNER (TALLER 100vh)
+   ================================ */
+.banner-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+}
+
+
+.banner-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  /* Menos opaco para disfrutar el video */
+  z-index: 2;
+}
+
+/* Redesigned Nav (Glassmorphism / Apple Style) */
+.banner-nav {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* Slight glass */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 200px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.banner-nav a {
+  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  /* Letras más legibles */
+}
+
+.banner-nav a:hover {
+  color: #fff;
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.banner-content {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.banner-title {
+  color: #fff;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  /* Massive premium title */
+  font-weight: 900;
+  letter-spacing: 0;
+  /* Modern tightly kerned title */
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.banner-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 400;
+  max-width: 650px;
+  margin: 0 auto;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Overlapping Banner Cards - "Floating Glass/Solid" look */
+.banner-cards-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  /* Transformacion mucho menor para no tapar tanto el video */
+  transform: translateY(20%);
+}
+
+.banner-cards {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.banner-card {
+  background: var(--bg-card);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  /* Big smooth rounded corners */
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-3d);
+
+  /* Degradado sutil de verde en el contorno/borde */
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-image:
+    linear-gradient(var(--bg-card), var(--bg-card)),
+    linear-gradient(135deg, rgba(75, 126, 25, 0.4), rgba(75, 126, 25, 0.05));
+
+  transform-style: preserve-3d;
+}
+
+.banner-card:hover {
+  transform: perspective(1000px) rotateX(4deg) translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1), var(--shadow-green);
+  /* Hover green border strengthens */
+  background-image:
+    linear-gradient(var(--bg-card), var(--bg-card)),
+    linear-gradient(135deg, var(--brand-green), rgba(75, 126, 25, 0.3));
+}
+
+.banner-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.banner-card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ================================
+   ABOUT / NOSOTROS SECTION
+   ================================ */
+.about-section {
+  padding-top: 180px;
+  /* Compensate for overlapping but less this time */
+}
+
+/* Clase global para todas las rotillas (borders) con borde degradado verde */
+.modern-3d-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-3d) !important;
+  transform-style: preserve-3d;
+
+  /* Gradiente verde en bordes */
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-image:
+    linear-gradient(var(--bg-card), var(--bg-card)),
+    linear-gradient(135deg, rgba(75, 126, 25, 0.3), transparent);
+}
+
+.modern-3d-card:hover {
+  transform: perspective(1000px) rotateX(5deg) scale3d(1.02, 1.02, 1);
+  box-shadow: var(--shadow-lg), var(--shadow-green);
+  background-image:
+    linear-gradient(var(--bg-card), var(--bg-card)),
+    linear-gradient(135deg, var(--brand-green), rgba(75, 126, 25, 0.2));
+}
+
+.about-philosophy {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  /* Clean grid separation */
+  margin-bottom: 6rem;
+  margin-top: 4rem;
+}
+
+.philosophy-card {
+  padding: 3rem;
+}
+
+.philosophy-card h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--brand-green);
+  margin-bottom: 1.5rem;
+}
+
+.philosophy-card p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/5;
+  background-image: none !important;
+  /* Quitar borde degradado por debajo de las fotos */
+  border: none !important;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  /* Softer, highly cinematic zoom */
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Overlay mucho más cristalino para que se vea la imagen clara */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  padding: 3rem 2rem;
+  text-align: left;
+}
+
+.gallery-overlay span {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ================================
+   CONFERENCE SECTION
+   ================================ */
+.conference-section {
+  background-color: var(--bg-light);
+}
+
+.video-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  line-height: 0;
+  /* Remove potential gap below video */
+  background: #000;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+  display: block;
+}
+
+/* ================================
+   WHY CHOOSE US (Boutique Cards)
+   ================================ */
+.boutique-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.boutique-card {
+  overflow: hidden;
+  text-align: center;
+}
+
+.bc-img-wrapper {
+  position: relative;
+  height: 220px;
+  border-radius: calc(var(--radius-lg) - 2px) calc(var(--radius-lg) - 2px) 0 0;
+  overflow: hidden;
+}
+
+.bc-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bc-icon {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--bg-card);
+  color: var(--brand-green);
+  border-radius: 50%;
+  /* Circle icon badge */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+  transition: all var(--transition-fast);
+}
+
+.boutique-card:hover .bc-icon {
+  background: var(--brand-green);
+  color: #fff;
+  transform: translateX(-50%) scale(1.1) rotate(5deg);
+}
+
+.bc-content {
+  padding: 3.5rem 1.5rem 2.5rem;
+}
+
+.bc-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.bc-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ================================
+   SERVICES SECTION (MAGIC HOVER)
+   ================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.service-card {
+  padding: 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* El transition del hover está en modern-3d-card */
+}
+
+/* Al poner el mouse, la carta de servicio se vuelva VERDE ENTERA y el texto blanco */
+.service-card:hover {
+  background-image:
+    linear-gradient(var(--brand-green), var(--brand-green)),
+    linear-gradient(135deg, var(--brand-green), var(--brand-green));
+}
+
+.service-card:hover h3,
+.service-card:hover p {
+  color: #ffffff !important;
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--bg-light);
+  /* Reversed icon setup */
+  color: var(--brand-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-smooth);
+}
+
+.service-card:hover .service-icon {
+  background: #ffffff;
+  color: var(--brand-green);
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  transition: color var(--transition-smooth);
+}
+
+.service-card p {
+  color: var(--text-muted);
+  transition: color var(--transition-smooth);
+}
+
+/* ================================
+   STORE SECTION
+   ================================ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin-top: 5rem;
+}
+
+.product-card {
+  text-align: left;
+}
+
+.product-img-box {
+  position: relative;
+  padding: 3rem 2rem;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-card);
+  /* Soft background highlights product */
+  border-bottom: 1px solid var(--border-color);
+  border-radius: calc(var(--radius-lg) - 2px) calc(var(--radius-lg) - 2px) 0 0;
+  overflow: hidden;
+}
+
+.product-img-box img {
+  max-height: 100%;
+  transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-img-box img {
+  transform: scale(1.08) perspective(500px) rotateY(-5deg);
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.premium-badge {
+  background-color: #222;
+}
+
+.highlight-badge {
+  background-color: var(--brand-green);
+}
+
+.product-info {
+  padding: 2rem;
+}
+
+.product-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-dark);
+}
+
+.product-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Wanted CTA inside store */
+.store-more-cta {
+  margin-top: 6rem;
+  padding: 5rem 3rem;
+  background: var(--bg-card);
+}
+
+.store-more-cta h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.store-more-cta p {
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+}
+
+/* ================================
+   CONTACT SECTION
+   ================================ */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 6rem;
+}
+
+.contact-card {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-methods {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--border-green-subtle);
+  background: var(--bg-card);
+  color: var(--brand-green);
+  border-radius: 20px;
+  /* Highly rounded square (iOS style icon) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
+  transform-style: preserve-3d;
+}
+
+.contact-item:hover .contact-icon {
+  background: var(--brand-green);
+  color: #fff;
+  border-color: var(--brand-green);
+  transform: perspective(400px) rotateY(15deg) translateY(-3px);
+  box-shadow: var(--shadow-green);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-details .label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.contact-details .value {
+  color: var(--text-dark);
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: color var(--transition-fast);
+}
+
+a.value:hover {
+  color: var(--brand-green);
+}
+
+.contact-visual {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-3d);
+}
+
+.contact-visual:hover {
+  transform: scale3d(1.02, 1.02, 1);
+  box-shadow: var(--shadow-lg), var(--shadow-green);
+}
+
+.contact-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* CRITICAL RULE: NO CROPPING */
+  background: var(--bg-card);
+  padding: 1rem;
+}
+
+/* ================================
+   FOOTER (VERDE CLARO Y ELEGANTE)
+   ================================ */
+.site-footer {
+  background-color: var(--footer-light-green);
+  /* Verde clarito muy premium */
+  color: var(--text-dark);
+  /* Letra oscura para máximo contraste */
+  padding: 6rem 0 3rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  /* Separador suave oscuro */
+  padding-bottom: 4rem;
+  margin-bottom: 3rem;
+  gap: 3rem;
+}
+
+.footer-left {
+  display: flex;
+  gap: 2rem;
+  max-width: 500px;
+}
+
+.footer-brand-name {
+  color: var(--brand-green);
+  /* Resaltar la marca con verde fuerte */
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-desc {
+  color: var(--text-muted);
+  /* Texto gris para la desc */
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.footer-right h4 {
+  color: var(--text-dark);
+  /* Color oscuro */
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--border-color);
+  /* Borde suave oscuro */
+  background: var(--bg-card);
+  /* Fondo blanco en el footer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-green);
+  border-radius: 50%;
+  /* Circle shape */
+  font-size: 1.1rem;
+  transition: all var(--transition-3d);
+}
+
+.social-btn:hover {
+  background: var(--brand-green);
+  border-color: var(--brand-green);
+  color: #fff;
+  transform: perspective(400px) rotateY(15deg) translateY(-4px);
+  box-shadow: var(--shadow-green);
+}
+
+.footer-bottom {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANIMATIONS & EFFECTS
+   ================================ */
+
+/* Reveal Animations */
+.reveal-anim {
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.reveal-anim.slide-up {
+  transform: translateY(60px);
+}
+
+.reveal-anim.slide-left {
+  transform: translateX(60px);
+}
+
+.reveal-anim.slide-right {
+  transform: translateX(-60px);
+}
+
+/* When In View */
+.reveal-anim.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Staggers */
+.stagger-1.visible {
+  transition-delay: 0.1s;
+}
+
+.stagger-2.visible {
+  transition-delay: 0.2s;
+}
+
+.stagger-3.visible {
+  transition-delay: 0.3s;
+}
+
+.stagger-4.visible {
+  transition-delay: 0.4s;
+}
+
+/* Micro-interactions */
+.element-hover {
+  transition: transform var(--transition-smooth);
+}
+
+.element-hover:hover {
+  transform: translateY(-6px);
+}
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+@media (max-width: 1024px) {
+  .banner-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 5%;
+  }
+
+  .banner-container {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+    /* Mas espacio compensando transform. */
+  }
+
+  .banner-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 8rem auto 2rem;
+  }
+
+  .banner-cards-wrapper {
+    position: relative;
+    transform: none;
+    margin-top: 0;
+  }
+
+  .about-philosophy {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* When single column, reset inner border if previously had */
+  .philosophy-card.border-mid {
+    border: none;
+  }
+
+  .boutique-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 80px 0;
+  }
+
+  .banner-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 95%;
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+  }
+
+  .banner-nav a {
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    width: 80px;
+    order: -1;
+    width: 100%;
+    max-width: 100px;
+    margin-bottom: 0.5rem;
+  }
+
+  .banner-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .philosophy-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .bc-content {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .service-card {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    aspect-ratio: 16/9;
+  }
+
+  .boutique-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+/* ================================
+   GOOGLE TRANSLATE CUSTOMIZATION
+   ================================ */
+.lang-toggle-wrapper {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 10000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px 8px 16px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.lang-toggle-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(75, 126, 25, 0.15); /* Greenish shadow on hover */
+}
+
+.lang-toggle-wrapper i {
+  font-size: 1.15rem;
+  color: var(--brand-green);
+}
+
+/* Ocultar elementos nativos feos y textos residuales de Google */
+.goog-te-gadget-icon {
+  display: none;
+}
+
+.goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: var(--font-body) !important;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.goog-te-gadget-simple span {
+  color: var(--text-dark) !important;
+  font-weight: 500 !important;
+}
+
+/* Hide the weird pipe separator or arrows sometimes injected by Google */
+.goog-te-gadget-simple img {
+  display: none !important;
+}
+.goog-te-gadget-simple .goog-te-menu-value span {
+  border-left: none !important;
+}
+
+.skiptranslate.goog-te-gadget {
+  color: transparent !important;
+}
+
+/* Ocultar el banner superior que baja todo el layout */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+/* Reviews*/
+/* ===== SECCIÓN ===== */
+.reviews-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.reviews-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* ===== GRID ===== */
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* ===== CARD ===== */
+.review-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px;
+
+  width: 100%;
+  max-width: 420px;
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+}
+
+/* 🔥 MANCHA VERDE */
+.review-card::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(76,175,80,0.35), transparent 70%);
+  top: -60px;
+  right: -60px;
+  z-index: 0;
+  transition: all 0.4s ease;
+}
+
+/* contenido encima */
+.review-card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ✨ HOVER */
+.review-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.review-card:hover::before {
+  transform: scale(1.3);
+  opacity: 0.6;
+}
+
+/* ===== HEADER ===== */
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.review-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* avatar animación */
+.review-card:hover .review-header img {
+  transform: scale(1.1);
+}
+
+/* ===== TEXTO ===== */
+.review-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  margin-top: 10px;
+}
+
+/* ===== ESTRELLAS ===== */
+.stars {
+  color: #FFD700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover .stars {
+  transform: scale(1.1);
+}

@@ -1,0 +1,20 @@
+# Enable Rewriting
+RewriteEngine On
+
+# Ensure Productos works correctly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^productos$ productos.html [L]
+
+# General .html hiding
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ .html [NC,L]
+
+# Redirect from .html to no extension (Canonical)
+RewriteCond %{THE_REQUEST} /([^/]+)\.html [NC]
+RewriteRule ^ /%1 [L,R=301]
+
+# Specific case for index.html (Redirect to root /)
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ / [L,R=301]
